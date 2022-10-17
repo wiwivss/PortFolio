@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortFolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b1ab888200.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="Images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">À propos de moi</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-sharp fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Etudiant en informatique</p>
+                <h1><span>Wissam </span>Bouderbala</h1>
+            </div>
+        </div>
+        <!--------------------À propos de moi--------------------->
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">À propos de moi</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisi arcu, 
+                        cursus sed dolor sed, fringilla tempus odio. Vestibulum et dui lorem. Nullam et dictum velit. 
+                        Praesent eu nisi varius sapien mattis condimentum quis at purus. Pellentesque dignissim hendrerit lectus pellentesque consequat. Quisque gravida fringilla neque vel tristique. Aliquam erat volutpat.</p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Compétences')">Compétences</p>
+                        <p class="tab-links" onclick="opentab('Formations')">Formations</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Compétences">
+                        <ul>
+                            <li><span>Html</span><br>Intermédiaire</li>
+                            <li><span>CSS</span><br>Intermédiaire</li>
+                            <li><span>Java</span><br>Débutant</li>
+                            <li><span>SQL</span><br>Débutant</li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Formations">
+                        <ul>
+                            <li><span>2022 - actuellement</span><br>Université Paris- Est-Créteil Val de Marne<br>Licence - Informatique</li>
+                            <li><span>2019 - 2022</span><br>Lycée Polyvalent Jean Macé<br>Baccalauréat générale spécialitées: Mathématiques, Physique-chimie (Mention assez-Bien)</li>
+                     </ul>
+                    </div>          
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------Portfolio------------------------------------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Mes Projets</h1>
+            <p>Prochainement !</p>
+            <div class="worklist">
+                <div class="work">
+                    <img src="" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------------- Contact----------------------------------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contactez-moi !</h1>
+                    <p><i class="fas fa-paper-plane"></i> wissam.bouderbala15@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> 07 86 72 31 40</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/wiwi_vss/?hl=fr"><i class="fab fa-instagram-square"></i></a>
+                        <a href="https://www.facebook.com/wissam.bouderbala.5/"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://twitter.com/VssWiwi"><i class="fab fa-twitter-square"></i></a>
+                    </div>
+                    <a href="Images/CV.png" download class="btn btn2">Mon Cv  </a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="name" placeholder="Votre Nom" required>
+                        <input type="email" name="email" placeholder="Votre Email" required>
+                        <textarea name="message" rows="6" placeholder="Votre Message"></textarea>
+                        <button type="submit" class="btn btn2">Soumettre</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2022 - Bouderbala Wissam - Tous droits réservés.</p>
+        </div>
+    </div>
+    <script>
+    
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+
+         var sidemeu = document.getElementById("sidemenu");
+
+         function openmenu(){
+            sidemeu.style.right = "0";
+         }
+         function closemenu(){
+            sidemeu.style.right = "-220px";
+         }
+
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwdcLURqAl0tyJ6SRuvqkxKf0XqDQrAUFjWwUrWMd1VsvwyD2UozlPDFttZ6qlIk8S4/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent succesfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
